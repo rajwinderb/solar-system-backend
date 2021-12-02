@@ -93,13 +93,13 @@ app.get<{ id: string }>("/planets/:id", async (req, res) => {
 app.patch<{ id: string }, {}, Partial<Planet>>(
   "/planets/:id",
   async (req, res) => {
-    const { stars } = req.body;
+    const stars = req.body.stars;
     const id = req.params.id;
 
-    if (stars && typeof stars === "string") {
+    if (stars && typeof stars === "number") {
       const updateResponse = await client.query(
         "UPDATE planets SET stars = $2 WHERE id = $1 RETURNING *",
-        [id, parseInt(stars)]
+        [id, stars]
       );
 
       if (updateResponse.rowCount === 1) {
