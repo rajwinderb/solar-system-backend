@@ -10,29 +10,20 @@
     </header>
     <main>
       <section>
-        <h3>Retrieve all items</h3>
-        <p><code>GET /items</code></p>
+        <h3>Retrieve all planets</h3>
+        <p><code>GET /planets</code></p>
       </section>
       <section>
-        <h3>Create a item</h3>
-        <p><code>POST /items</code></p>
+        <h3>Retrieve a specific planet</h3>
+        <p><code>GET /planets/{id}</code></p>
       </section>
       <section>
-        <h3>Retrieve a specific item</h3>
-        <p><code>GET /items/{id}</code></p>
-      </section>
-      <section>
-        <h3>Update a specific item</h3>
-        <p><code>PATCH /items/{id}</code></p>
-        <p>Attaching a JSON body with the possible below fields:</p>
+        <h3>Update a specific planet</h3>
+        <p><code>PATCH /planets/{id}</code></p>
+        <p>Attaching a JSON body with the below field:</p>
         <ul>
-          <li><code>title</code> (string)</li>
-          <li><code>message</code> (string)</li>
+          <li><code>star</code> (number)</li>
         </ul>
-      </section>
-      <section>
-        <h3>Delete a specific item</h3>
-        <p><code>DELETE /items/{id}</code></p>
       </section>
     </main>
   </body>
